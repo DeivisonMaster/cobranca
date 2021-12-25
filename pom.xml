@@ -10,7 +10,7 @@
 	<packaging>war</packaging>
 	
 	<name>cobranca</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Sistema de Cobrança de título</description>
 	
 	<parent>
 		<groupId>org.springframework.boot</groupId>
