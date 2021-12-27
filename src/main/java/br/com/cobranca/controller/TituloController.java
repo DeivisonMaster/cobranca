@@ -37,6 +37,11 @@ public class TituloController {
 		return mv;
 	}
 	
+	@RequestMapping
+	public String consultar(){
+		return "ConsultaTitulo";
+	}
+	
 	@ModelAttribute("listaStatusTitulo")
 	public List<StatusTitulo> todosStatusTitulo() {
 		return Arrays.asList(StatusTitulo.values());
