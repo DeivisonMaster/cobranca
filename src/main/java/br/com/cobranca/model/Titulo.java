@@ -18,7 +18,6 @@ import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.NumberFormat;
 
 @Entity
-@Table(name = "titulo")
 public class Titulo {	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

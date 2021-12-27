@@ -3,7 +3,7 @@
 	xmlns:th="http://www.thymeleaf.org">
 <head>
 	<meta charset="UTF-8"/>
-	<title>Insert title here</title>
+	<title>Cadastro Título</title>
 	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="/css/estilo.css">
 </head>
@@ -54,8 +54,7 @@
 					<label for="status" class="col-sm-2 control-label">Status</label>
 					<div class="col-sm-2">
 						<select class="form-control" name="status">
-							<option value="PENDENTE">Pendente</option>
-							<option value="RECEBIDO">Recebido</option>
+							<option th:each="status : ${listaStatusTitulo}" th:value="${status}" th:text="${status.descricao}"></option>
 						</select>
 					</div>
 				</div>
