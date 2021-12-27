@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import br.com.cobranca.model.Titulo;
 import br.com.cobranca.repository.TituloRepository;
@@ -21,11 +22,12 @@ public class TituloController {
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
-	public String novo(Titulo titulo){
-		System.out.println(titulo.getDescricao());
-		
+	public ModelAndView novo(Titulo titulo){
 		repository.save(titulo);
-		return "CadastroTitulo";
+		
+		ModelAndView mv = new ModelAndView("CadastroTitulo");
+		mv.addObject("mensagem", "Título salvo com sucesso!");
+		return mv;
 	}
 	
 }
