@@ -9,3 +9,13 @@
 .alert{
 	margin: 0 10px 10px 10px;
 }
+
+.cobranca-link-panel {
+	float: right;
+	padding: 0px;
+}
+
+.cobranca-titulo-panel {
+	float: left;
+	padding-top: 2px;
+}

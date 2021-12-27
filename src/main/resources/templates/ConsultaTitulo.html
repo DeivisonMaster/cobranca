@@ -1,28 +1,21 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-	xmlns:th="http://www.thymeleaf.org">
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{LayoutPadrao}">
 <head>
-	<meta charset="UTF-8"/>
 	<title>Consulta Título</title>
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/estilo.css">
 </head>
-<body>
-	<nav class="navbar navbar-inverse navbar-static-top">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">
-					<img alt="Cobrança" src="/imagens/logo-algaworks.png"/>
-				</a>
-			</div>
-		</div>
-	</nav>
-	
+
+<section layout:fragment="conteudo">
 	<div class="panel panel-default">
 		<div class="panel-heading">
-			<h1 class="panel-title">Consulta de títulos</h1>
-		</div>
-		
+			<div class="clearfix">
+	   			<h1 class="panel-title cobranca-titulo-panel">Pesquisa de títulos</h1>
+	   			<a class="btn btn-link cobranca-link-panel" href="/titulos/novo">Novo título</a>
+	   		</div>
+	   	</div>
+
 		<div class="panel-body">
 			<table class="table table-bordered table-striped">
 				<thead>
@@ -34,17 +27,14 @@
 						<th class="text-center col-md-2">Status</th>
 						<th class="col-md-1"></th>
 					</tr>
-				</thead>		
+				</thead>
 				<tbody>
 					<tr>
 						<td colspan="6">Nenhum título foi encontrado
 					</tr>
-				</tbody>		
+				</tbody>
 			</table>
 		</div>
 	</div>
-	
-	<script src="/js/jquery-2.1.4.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-</body>
+</section>
 </html>
