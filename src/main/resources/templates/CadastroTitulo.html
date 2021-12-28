@@ -14,12 +14,14 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<div class="clearfix">
-					<h1 class="panel-title cobranca-titulo-panel">Novo título</h1>
+					<h1 class="panel-title cobranca-titulo-panel">Cadastro de título</h1>
 					<a class="btn btn-link cobranca-link-panel" href="/titulos">Consultar Títulos</a>
 				</div>
 			</div>
 			
 			<div class="panel-body">
+				<input type="hidden" th:field="*{id}"/>
+			
 				<div class="form-group" th:classappend="${#fields.hasErrors('descricao')} ? has-error">
 					<label for="descricao" class="col-sm-2 control-label">Descrição</label>
 					<div class="col-sm-4">
