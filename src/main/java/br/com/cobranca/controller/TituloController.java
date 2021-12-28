@@ -38,8 +38,11 @@ public class TituloController {
 	}
 	
 	@RequestMapping
-	public String consultar(){
-		return "ConsultaTitulo";
+	public ModelAndView consultar(){
+		List<Titulo> listaTitulos = repository.findAll();
+		ModelAndView mv = new ModelAndView("ConsultaTitulo");
+		mv.addObject("listaTitulos", listaTitulos);	
+		return mv;
 	}
 	
 	@ModelAttribute("listaStatusTitulo")
