@@ -9,7 +9,8 @@
 	
 <section layout:fragment="conteudo">	
 	<form class="form-horizontal" method="POST" action="/titulos" th:object="${titulo}">
-		<div th:replace="mensagens"></div>
+		<div th:replace="mensagem/msgSucesso"></div>
+		<div th:replace="mensagem/msgErro"></div>
 			
 		<div class="panel panel-default">
 			<div class="panel-heading">

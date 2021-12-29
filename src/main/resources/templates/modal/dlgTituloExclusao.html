@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+	<!-- Modal -->
+	<div class="modal fade" id="idDlgConfirmaExclusao" tabindex="-1">
+	  <div class="modal-dialog">
+	  	<form th:attr="data-urlbase='/titulos'" method="POST" th:method="DELETE">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <button type="button" class="close" data-dismiss="modal"></button>
+		        <h4 class="modal-title" id="exampleModalLabel">Confirmação de Exclusão:</h4>
+		      </div>
+		      
+		      <div class="modal-body">
+		        <span></span> 
+		      </div>
+		      
+		      <div class="modal-footer">
+		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+		        <button type="submit" class="btn btn-primary">Excluir</button>
+		      </div>
+		    </div>
+	    </form>
+	  </div>
+	</div>
+	
+</html>

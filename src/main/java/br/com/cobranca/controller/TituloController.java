@@ -55,10 +55,18 @@ public class TituloController {
 	
 	@RequestMapping("{id}")
 	public ModelAndView edicao(@PathVariable Long id){
-		Titulo titulo = repository.getOne(id);
+		Titulo titulo = repository.getById(id);
 		ModelAndView mv = new ModelAndView(CADASTRO_VIEW);
 		mv.addObject(titulo);
 		return mv;
+	}
+	
+	@RequestMapping(value = "{idtitulo}", method = RequestMethod.DELETE)
+	public String excluir(@PathVariable Long idtitulo, RedirectAttributes atributos){
+		repository.deleteById(idtitulo);
+		
+		atributos.addFlashAttribute("mensagem", "Título excluido com sucesso!");
+		return "redirect:/titulos";
 	}
 	
 	@ModelAttribute("listaStatusTitulo")
