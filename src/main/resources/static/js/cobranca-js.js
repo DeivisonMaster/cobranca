@@ -14,5 +14,5 @@ $('#idDlgConfirmaExclusao').on('show.bs.modal', function(event) {
 });
 
 $(document).ready(function (){
-	$('[rel="tooltip"]').tooltip();
+	$('[rel="tooltip"]').tooltip(); // habilitando tooltip
 });
