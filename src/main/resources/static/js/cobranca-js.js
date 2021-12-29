@@ -15,4 +15,10 @@ $('#idDlgConfirmaExclusao').on('show.bs.modal', function(event) {
 
 $(document).ready(function (){
 	$('[rel="tooltip"]').tooltip(); // habilitando tooltip
+	
+	$('.jsValor').maskMoney({
+		decimal: ',',
+		thousands: '.',
+		allowZero: true
+	});
 });
