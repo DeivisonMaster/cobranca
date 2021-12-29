@@ -10,6 +10,9 @@ $('#idDlgConfirmaExclusao').on('show.bs.modal', function(event) {
 		action += '/';
 	}
 	form.attr('action', action + idTitulo);
-	
 	objModal.find('.modal-body span').html('Tem certeza que deseja excluir o titulo <strong>' + descricaoTitulo + '</strong>?');
+});
+
+$(document).ready(function (){
+	$('[rel="tooltip"]').tooltip();
 });

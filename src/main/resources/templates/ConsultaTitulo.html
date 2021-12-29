@@ -42,11 +42,12 @@
 	   					</td>
 	   					<td class="text-center">
 	   						<a class="btn btn-link btn-xs" th:href="@{/titulos/{idParam}(idParam=${titulo.id})}" 
-	   							role="button" >
+	   							role="button" title="Editar" rel="tooltip" data-placement="top">
 	   							<span class="glyphicon glyphicon-pencil"></span> 
 	   						</a>
 	   						<a class="btn btn-link btn-xs" href="#" data-toggle="modal" 
-	   							data-target="#idDlgConfirmaExclusao" th:attr="data-idtitulo=${titulo.id}, data-descricao=${titulo.descricao}">
+	   							data-target="#idDlgConfirmaExclusao" th:attr="data-idtitulo=${titulo.id}, data-descricao=${titulo.descricao}"
+	   							title="Excluir" rel="tooltip" data-placement="top">
 					          <span class="glyphicon glyphicon-trash"></span>
 					        </a>
 	   					</td>
