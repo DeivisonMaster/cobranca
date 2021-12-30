@@ -1,25 +1,26 @@
+@media(min-width: 768px){
+	.panel-default {
+		margin: 0 10px 0 10px;
+}
+	.alert{
+		margin: 0 10px 10px 10px;
+	}
+}
+
+.navbar-header > a{
+	margin: 0 0 0 0; display: inline-block;
+}
+.navbar-header > h4{
+	float: left; color: #fff; margin: 16px 0 0 0; 
+}
 .navbar-brand {
 	padding-top: 12px;
 }
-
-.panel-default {
-	margin: 0 10px 0 10px;
-}
-
-.alert{
-	margin: 0 10px 10px 10px;
-}
-
 .cobranca-link-panel {
 	float: right;
 	padding: 0px;
 }
-
 .cobranca-titulo-panel {
 	float: left;
 	padding-top: 2px;
-}
-
-.btn-xs{
-	font-size: 1em !important;
 }
