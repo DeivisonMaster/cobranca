@@ -5,9 +5,9 @@
 <head>
 	<meta charset="UTF-8"/>
 	<title>Sistema de Cobrança de Título</title>
-	<link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/datepicker.standalone.min.css">
-	<link rel="stylesheet" type="text/css" href="/css/estilo.css">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/datepicker.standalone.min.css}">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/estilo.css}">
 </head>
 <body>
 
@@ -18,11 +18,11 @@
 	<section layout:fragment="conteudo"></section>
 	
 	
-	<script src="/js/jquery-2.1.4.min.js"></script>
-	<script src="/js/bootstrap.min.js"></script>
-	<script src="/js/datepicker-min.js"></script>
-	<script src="/js/datepicker.pt-BR.min.js"></script>
-	<script src="/js/jquery.maskMoney.min.js"></script>
-	<script src="/js/cobranca-js.js"></script>
+	<script th:src="@{/js/jquery-2.1.4.min.js}"></script>
+	<script th:src="@{/js/bootstrap.min.js}"></script>
+	<script th:src="@{/js/datepicker-min.js}"></script>
+	<script th:src="@{/js/datepicker.pt-BR.min.js}"></script>
+	<script th:src="@{/js/jquery.maskMoney.min.js}"></script>
+	<script th:src="@{/js/cobranca-js.js}"></script>
 </body>
 </html>
