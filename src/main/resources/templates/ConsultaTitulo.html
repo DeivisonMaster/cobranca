@@ -19,6 +19,21 @@
 	   	</div>
 
 		<div class="panel-body">
+			<form method="GET" class="form-horizontal" th:object="${filtro}">
+				<div class="form-group">
+					<div class="col-sm-4">
+						<div class="input-group">
+							<input class="form-control" th:field="*{descricao}" placeholder="Qual título você procura?" autofocus="autofocus"/>
+							<span class="input-group-btn">
+								<button type="submit" class="btn btn-default">
+									<i class="glyphicon glyphicon-search"></i>
+								</button>
+							</span>
+						</div>
+					</div>
+				</div>
+			</form>
+		
 			<table class="table table-bordered table-striped">
 				<thead>
 					<tr>
@@ -36,7 +51,7 @@
 	   					<td th:text="${titulo.descricao}"></td>
 	   					<td class="text-center" th:text="${{titulo.dataVencimento}}"></td>
 	   					<td class="text-right" th:text="|R$ ${{titulo.valor}}|"></td>
-	   					<td class="text-center">
+	   					<td class="text-center" th:attr="data-idstatus=${titulo.id}">
 	   						<span class="label" th:text="${titulo.status.descricao}" 
 	   							th:classappend="${titulo.pendente ? 'label-danger' : 'label-success'}"></span>
 	   					</td>
@@ -49,6 +64,12 @@
 	   							data-target="#idDlgConfirmaExclusao" th:attr="data-idtitulo=${titulo.id}, data-descricao=${titulo.descricao}"
 	   							title="Excluir" rel="tooltip" data-placement="top">
 					          <span class="glyphicon glyphicon-trash"></span>
+					        </a>
+					        <a class="btn btn-link btn-xs js-atualizaStatus" href="#" th:if="${titulo.pendente}" 
+					        	title="Receber" rel="tooltip" data-placement="top"
+					        	th:href="@{/titulos/{idParam}/receber(idParam=${titulo.id})}"
+					        	th:attr="data-idtitulo=${titulo.id}">
+					        	<span class="glyphicon glyphicon-check"></span>
 					        </a>
 	   					</td>
 	   				</tr>			

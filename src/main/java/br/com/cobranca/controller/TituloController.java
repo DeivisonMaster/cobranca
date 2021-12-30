@@ -4,7 +4,6 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.validation.annotation.Validated;
@@ -12,11 +11,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.cobranca.model.StatusTitulo;
 import br.com.cobranca.model.Titulo;
+import br.com.cobranca.model.TituloFiltro;
 import br.com.cobranca.repository.TituloRepository;
 import br.com.cobranca.service.TituloService;
 
@@ -54,10 +55,11 @@ public class TituloController {
 	}
 	
 	@RequestMapping
-	public ModelAndView consultar(){
-		List<Titulo> listaTitulos = repository.findAll();
+	public ModelAndView consultar(@ModelAttribute("filtro") TituloFiltro filtro){
+		List<Titulo> titulos = service.consultaFiltro(filtro);
+		
 		ModelAndView mv = new ModelAndView("ConsultaTitulo");
-		mv.addObject("listaTitulos", listaTitulos);	
+		mv.addObject("listaTitulos", titulos);	
 		return mv;
 	}
 	
@@ -75,6 +77,11 @@ public class TituloController {
 		
 		atributos.addFlashAttribute("mensagem", "Título excluido com sucesso!");
 		return "redirect:/titulos";
+	}
+	
+	@RequestMapping(value = "/{idParam}/receber", method = RequestMethod.PUT)
+	public @ResponseBody String atualizaStatus(@PathVariable Long idParam){
+		return service.atualizaStatus(idParam);
 	}
 	
 	@ModelAttribute("listaStatusTitulo")

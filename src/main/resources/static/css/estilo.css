@@ -19,3 +19,7 @@
 	float: left;
 	padding-top: 2px;
 }
+
+.btn-xs{
+	font-size: 1em !important;
+}

@@ -14,11 +14,41 @@ $('#idDlgConfirmaExclusao').on('show.bs.modal', function(event) {
 });
 
 $(document).ready(function (){
-	$('[rel="tooltip"]').tooltip(); // habilitando tooltip
-	
+	habilitaTooltip();
+	habilitaMaskMoney();
+	atualizaStatus();
+});
+
+function atualizaStatus(){
+	$('.js-atualizaStatus').on('click', function(event){
+		event.preventDefault();
+		
+		var btnReceber = $(event.currentTarget);
+		var urlRequest = btnReceber.attr('href');
+		
+		$.ajax({
+			url: urlRequest,
+			method: 'PUT',
+			success: function(e){
+				var idTitulo = btnReceber.data('idtitulo');
+				$('[data-idstatus=' + idTitulo + ']').html('<span class="label label-success">' + e + '</span>');
+				btnReceber.hide();
+			},
+			fail: function(e){
+				alert('Erro');
+			}
+		});
+	});
+}
+
+function habilitaTooltip(){
+	$('[rel="tooltip"]').tooltip();
+}
+
+function habilitaMaskMoney(){
 	$('.jsValor').maskMoney({
 		decimal: ',',
 		thousands: '.',
 		allowZero: true
 	});
-});
+}
