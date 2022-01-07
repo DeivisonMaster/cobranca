@@ -17,7 +17,7 @@ O formato é baseado na convenção  em [Keep a Changelog]
 
 - teste
 
-#### Removed
+### Removed
 
 - teste
 
